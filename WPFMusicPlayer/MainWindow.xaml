@@ -1,0 +1,185 @@
+﻿<Window x:Class="WPFMusicPlayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFMusicPlayer"
+        mc:Ignorable="d"
+        Title="Music Player" 
+        Height="400" 
+        Width="810"
+        Icon="Resources/image_music.png"
+        ResizeMode="CanMinimize"
+        MouseRightButtonDown="MainWindow_OnMouseRightButtonDown">
+    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <TextBlock Name="TextBlockTrackTitle" 
+                   Height="Auto" 
+                   Width="Auto" 
+                   Margin="0, 0, 0, 10"
+                   HorizontalAlignment="Center" 
+                   FontSize="20">
+            Unknown track
+        </TextBlock>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" 
+                    Margin="0, 0, 0, 10">
+            <TextBlock Name="TextBlockTrackProgress" 
+                       Height="20" 
+                       Width="Auto" 
+                       Margin="0, 0, 0, 10">
+                00:00
+            </TextBlock>
+            <TextBlock Height="20"  
+                       Margin="0, 0, 0, 10">
+                /
+            </TextBlock>
+            <TextBlock Name="TextBlockTrackDuration" 
+                       Height="20"
+                       Width="Auto" 
+                       Margin="0, 0, 0, 10">
+                00:00
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" 
+                    Margin="0, 0, 0, 10">
+            <Button Name="ButtonPreviousTrack" 
+                    Height="40" 
+                    Margin="0, 0, 5, 0"
+                    Padding="5"
+                    Background="White"
+                    BorderThickness="0" 
+                    Click="ButtonPreviousTrack_Click">
+                <Button.Content>
+                    <Image Source="Resources/image_previous.png" Stretch="Uniform"/>
+                </Button.Content>
+            </Button>
+            <Button Name="ButtonPlayPause" 
+                    Height="40" 
+                    Margin="0, 0, 5, 0" 
+                    Padding="5"
+                    Background="White"
+                    BorderThickness="0" 
+                    Click="ButtonPlayPause_Click">
+                <Button.Content>
+                    <Image Source="Resources/image_play.png" Stretch="Uniform"/>
+                </Button.Content>
+            </Button>
+            <Button Name="ButtonNextTrack" 
+                    Height="40" 
+                    Margin="0, 0, 10, 0" 
+                    Padding="5"
+                    Background="White"
+                    BorderThickness="0" 
+                    Click="ButtonNextTrack_Click">
+                <Button.Content>
+                    <Image Source="Resources/image_next.png" Stretch="Uniform"/>
+                </Button.Content>
+            </Button>
+
+            <Button Name="ButtonMoveProgressBack" 
+                    Height="40" 
+                    Margin="0, 0, 5, 0" 
+                    Padding="5" 
+                    Background="White"
+                    BorderThickness="0" 
+                    Click="ButtonMoveProgressBack_Click">
+                <Button.Content>
+                    <Image Source="Resources/image_counter_clock_wise.png" Stretch="Uniform" />
+                </Button.Content>
+            </Button>
+            <Slider Name="SliderProgress" 
+                    Width="200" 
+                    Height="20" 
+                    Minimum="0" 
+                    Maximum="100" 
+                    Margin="0, 0, 5, 0" 
+                    ValueChanged="SliderProgress_OnValueChanged">
+                <Slider.LayoutTransform>
+                    <ScaleTransform ScaleY="2.0" CenterX="0" CenterY="0"/>
+                </Slider.LayoutTransform>
+            </Slider>
+            <Button Name="ButtonMoveProgressFurther" 
+                    Height="40" 
+                    Margin="0, 0, 10, 0" 
+                    Padding="5" 
+                    Background="White"
+                    BorderThickness="0" 
+                    Click="ButtonMoveProgressFurther_Click">
+                <Button.Content>
+                    <Image Source="Resources/image_clock_wise.png" Stretch="Uniform" />
+                </Button.Content>
+            </Button>
+
+            <Button Name="ButtonDecreaseVolume" 
+                    Height="40" 
+                    Margin="0, 0, 5, 0" 
+                    Padding="5" 
+                    Background="White"
+                    BorderThickness="0" 
+                    Click="ButtonDecreaseVolume_Click">
+                <Button.Content>
+                    <Image Source="Resources/image_volume_down.png" Stretch="Uniform"/>
+                </Button.Content>
+            </Button>
+            <Slider Name="SliderVolume" 
+                    Minimum="0" 
+                    Maximum="100" 
+                    Width="100" 
+                    Height="20" 
+                    Margin="0, 0, 5, 0" 
+                    ValueChanged="SliderVolume_OnValueChanged">
+                <Slider.LayoutTransform>
+                    <ScaleTransform ScaleY="2.0" CenterX="0" CenterY="0"/>
+                </Slider.LayoutTransform>
+            </Slider>
+            <Button Name="ButtonIncreaseVolume" 
+                    Height="40" 
+                    Width="40" 
+                    Margin="0, 0, 10, 0" 
+                    Padding="5" 
+                    Background="White"
+                    BorderThickness="0" 
+                    Click="ButtonIncreaseVolume_Click">
+                <Button.Content>
+                    <Image Source="Resources/image_volume_up.png" Stretch="Uniform"/>
+                </Button.Content>
+            </Button>
+            <Button Name="ButtonNextTrackSetting" 
+                    Height="40" 
+                    Margin="0, 0, 10, 0" 
+                    Padding="5" 
+                    Background="White"
+                    BorderThickness="0" 
+                    Click="ButtonNextTrackSetting_Click">
+                <Button.Content>
+                    <Image Source="Resources/image_autonext.png" Stretch="Uniform" />
+                </Button.Content>
+            </Button>
+            <Button Name="ButtonOpenFile" 
+                    Height="40" 
+                    Margin="0, 0, 10, 0"
+                    Padding="5" 
+                    Background="White"
+                    BorderThickness="0" 
+                    Click="ButtonOpenFile_Click">
+                <Button.Content>
+                    <Image Source="Resources/image_open_file.png" Stretch="Uniform"/>
+                </Button.Content>
+            </Button>
+            <Button Name="ButtonClearTrackList" 
+                    Height="40" 
+                    Padding="5" 
+                    Background="White"
+                    BorderThickness="0" Click="ButtonClearTrackList_Click">
+                <Button.Content>
+                    <Image Source="Resources/image_trash.png" Stretch="Uniform"/>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+        <ListBox Name="ListBoxTrackList"
+                 Height="245"
+                 SelectionChanged="ListBoxTrackList_OnSelectionChanged">
+
+        </ListBox>
+    </StackPanel>
+</Window>
