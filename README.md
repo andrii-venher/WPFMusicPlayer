@@ -1,5 +1,5 @@
 # Music Player
-Simple music player with some essential features. MS Visual Studio 2019, C#, WPF (.NET Framework).
+Simple music player with some essential features. MS Visual Studio 2019, C#, WPF (.NET Framework), MVP Pattern.
 #### Main features
 The player allows you to load a number of audio files in format of __.mp3__ in a tracklist. 
 Apart from usual play/pause and previous/next song controls, you are able to rewind a track using slider of special buttons on the sides of a slider.
