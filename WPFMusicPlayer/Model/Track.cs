@@ -16,7 +16,7 @@ namespace WPFMusicPlayer.Model
         {
             Media = media;
             SRC = media.sourceURL;
-            Title = Path.GetFileName(SRC);
+            Title = Path.GetFileNameWithoutExtension(SRC);
             DurationRaw = media.duration;
         }
     }

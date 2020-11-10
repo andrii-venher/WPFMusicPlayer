@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFMusicPlayer"
         mc:Ignorable="d"
         Title="Music Player" 
-        Height="400" 
+        Height="353" 
         Width="810"
         Icon="Resources/image_music.png"
         ResizeMode="CanMinimize"
@@ -177,7 +177,7 @@
             </Button>
         </StackPanel>
         <ListBox Name="ListBoxTrackList"
-                 Height="245"
+                 Height="190"
                  SelectionChanged="ListBoxTrackList_OnSelectionChanged">
 
         </ListBox>

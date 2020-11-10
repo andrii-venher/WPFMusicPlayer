@@ -63,7 +63,7 @@ namespace WPFMusicPlayer
 
         public void OpenFile()
         {
-            OpenFileDialog dialog = new OpenFileDialog {Multiselect = true, Filter = "Audio files|*.mp3" };
+            var dialog = new OpenFileDialog {Multiselect = true, Filter = "Audio files|*.mp3" };
             if (dialog.ShowDialog() == true)
             {
                 foreach (var fileName in dialog.FileNames)
@@ -71,7 +71,7 @@ namespace WPFMusicPlayer
                     _player.LoadTrack(fileName);
                 }
 
-                _view.AddToTrackList(dialog.FileNames.Select(Path.GetFileName).ToArray());
+                _view.AddToTrackList(dialog.FileNames.Select(Path.GetFileNameWithoutExtension).ToArray());
             }
         }
 
